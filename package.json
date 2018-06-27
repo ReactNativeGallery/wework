@@ -1,12 +1,8 @@
 {
   "name": "wework",
   "version": "1.0.0",
-  "description": "We Work Meteor, a job board and developer directory for Meteor specific work https://www.weworkmeteor.com",
+  "description": "We Hire React-Native is the job board from https://reactnative.gallery",
   "main": "",
-  "engines": {
-    "node": "= 4.5.0",
-    "npm": "= 3.9.6"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
@@ -16,14 +12,10 @@
     "type": "git",
     "url": "git+https://github.com/nate-strauser/wework.git"
   },
-  "author": "Nathan Strauser",
+  "author": "Xavier Carpentier",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nate-strauser/wework/issues"
-  },
-  "homepage": "https://github.com/nate-strauser/wework#readme",
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "bcrypt": "^0.8.7"
+    "bcrypt": "^2.0.1"
   }
 }

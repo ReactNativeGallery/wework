@@ -1,5 +1,5 @@
 AdminConfig = {
-  name: 'We Work Meteor',
+  name: 'We Hire React-Native',
   collections: {
     Jobs: {
       icon: 'briefcase',

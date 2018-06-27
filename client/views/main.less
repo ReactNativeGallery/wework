@@ -1,17 +1,50 @@
-@import "../lib/journal.variables.import.less";
+@import "../lib/custom.bootstrap.import.less";
 
-h1,h2,h3,h4,h5{
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: @font-family-sans-serif;
+}
+
+.jumbotron {
+  h1,h2,h3,h4,h5 {
+    font-family: @font-family-sans-serif;
+    color: #fff;
+  }
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: @font-family-sans-serif;
   &.top-flush{
     margin-top: 0px;
   }
 }
 
-#content-wrapper{
-    min-height: 800px;
+.reactnative-gallery {
+  background: linear-gradient(to right, rgb(123, 198, 204), rgb(190, 147, 197));
+}
 
-    a:not(.btn):visited {
-        color: @text-color;
-    }
+.btn-success {
+  background: linear-gradient(to right, rgb(141, 194, 111), rgb(118, 184, 82));
+  border-color: rgb(141, 194, 111);
+  &:hover {
+      border-color: rgb(118, 184, 82);
+  }
+  &:active {
+      background:rgb(141, 194, 111);
+      border-color: rgb(141, 194, 111);
+  }
+  &:focus {
+      background:rgb(141, 194, 111);
+      border-color: rgb(141, 194, 111);
+  }
+}
+
+.avatar {
+    border-radius: 15px;
+}
+
+#content-wrapper {
+    min-height: 800px;
 
     .job-url {
         word-break: break-all;
@@ -48,17 +81,23 @@ h1,h2,h3,h4,h5{
 
 #callToAction{
     margin-top: 20px;
-    a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a, a:visited {
        font-size: 125%;
+       color: #fff;
     }
-} 
+}
 
 #connection-lost-banner{
     text-align: center;
 }
 
 nav.navbar, .btn, li a, .input-group-addon, .jumbotron, .panel, .label{
-  border-radius: 0px !important; 
+  border-radius: 0px !important;
+  font-family: @font-family-sans-serif;
 }
 
 .form-control{
@@ -113,7 +152,7 @@ nav.navbar {
         }
     }
     .nav.navbar-nav li{
-        
+
         p.navbar-text{
            font-size: 12px;
             font-weight: normal;
@@ -132,30 +171,25 @@ nav.navbar {
                 background:none;
                 color:@brand-primary;
             }
-            
-        } 
+
+        }
     }
 }
 
 footer {
-    border-top: 2px solid @brand-primary;
-    margin-top:20px;
-    padding: 20px 0px 20px 0px;    
+  border-top: 2px solid @brand-primary;
+  margin-top: 20px;
+  padding: 5px;
 
-    a:visited {
-        color: @brand-primary;
-    }
+  a:visited {
+      color: @brand-primary;
+  }
 
-    #disclaimer{
-        font-size: 50%;
-        padding-top: 15px;
-    }
+  #disclaimer{
+      font-size: 50%;
+      padding-top: 15px;
+  }
 }
-
-// .avatar-large{
-//     height: 200px;
-//     width:200px;
-// }
 
 .note-editor{
     .btn-toolbar{

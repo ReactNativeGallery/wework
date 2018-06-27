@@ -75,7 +75,7 @@ Meteor.methods({
     });
 
   },
-  createFeaturedJobCharge: function(tokenId, jobId) {
+  jobActivate: function(tokenId, jobId) {
     check(tokenId, String);
     check(jobId, String);
 
@@ -90,31 +90,20 @@ Meteor.methods({
     if (Meteor.isServer) {
       var result = Stripe.charges.create({
         source: tokenId,
-        amount: 10000,
+        amount: 9900,
         currency: "usd",
-        description: "We Work Meteor - Featured Job Post - 30 Days"
+        description: "We Hire React-Native - Job Post - 30 Days"
       });
 
       if (result && (result.status === "succeeded" || result.status === "paid")) { //'paid' status is not in stripe docs, but is occuring - see https://github.com/nate-strauser/wework/issues/108
         Jobs.update({ _id: job._id }, {
           $set: {
-            featuredThrough: moment().add(30, "days").toDate()
-          },
-          $push: {
-            featuredChargeHistory: result.id
+            status: 'active'
           }
         });
       } else {
         throw new Meteor.Error("Payment Failed!", "Stripe result not as expected", JSON.stringify(result));
       }
-    } else {
-      Jobs.update({
-        _id: jobId
-      }, {
-        $set: {
-          featuredThrough: moment().add(30, "days").toDate()
-        }
-      });
     }
   }
 });

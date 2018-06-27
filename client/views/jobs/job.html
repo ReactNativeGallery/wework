@@ -10,7 +10,6 @@
 					    {{>jobSuggestedTweet}}
 					{{/if}}
 					{{>jobStatusAlert}}
-					{{>jobFeatured}}
 					<div class="row">
 						<div class="col-sm-12">
 							<h2>
@@ -66,14 +65,7 @@
 										&nbsp;
 										<a href="{{pathFor 'jobEdit'}}" class="btn btn-primary"><i class="fa fa-pencil"></i> Edit</a>
 									</div>
-								{{!-- {{/if}} --}}
-								{{#if $eq status "active"}}
-									<div class="pull-right">
-										<a id="job-deactivate" class="btn btn-danger">
-											<i class="fa fa-times"></i> Deactivate
-										</a>
-									</div>
-								{{/if}}
+								{{>jobActivate}}
 							{{/if}}
 						</div>
 					</div>

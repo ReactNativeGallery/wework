@@ -34,60 +34,36 @@
     <div class="row">
         <div class="col-sm-12">
             {{title}} -
-            {{#if remote}}#Remote {{jobtype}}{{else}}{{jobtype}} in {{location}}{{/if}} {{urlFor 'job'}} #meteorjob #meteorjs
+            {{#if remote}}#Remote {{jobtype}}{{else}}{{jobtype}} in {{location}}{{/if}} {{urlFor 'job'}} #react-native-job
             <hr>
         </div>
     </div>
 </template>
 <template name="jobStatusAlert">
-    {{#if $eq status 'pending'}}
-        <div class="alert alert-info">
-            <i class="fa fa-exclamation-triangle fa-2x pull-left"></i> This post is awaiting admin approval. It will be reviewed shortly and then become live on the site.
+    {{#if $eq status 'flagged'}}
+        <div class="alert alert-danger">
+            <i class="fa fa-flag fa-2x pull-left"></i> This post has been flagged for content. Contact an admin if you believe this is in error.
         </div>
     {{else}}
-        {{#if $eq status 'flagged'}}
-            <div class="alert alert-danger">
-                <i class="fa fa-flag fa-2x pull-left"></i> This post has been flagged for content. Contact an admin if you believe this is in error.
+        {{#if $eq status 'inactive'}}
+            <div class="alert alert-warning">
+                <i class="fa fa-flag-checkered fa-2x pull-left"></i> This job post has been deactivated.
             </div>
         {{else}}
-            {{#if $eq status 'inactive'}}
-                <div class="alert alert-warning">
-                    <i class="fa fa-flag-checkered fa-2x pull-left"></i> This job post has been deactivated.
+            {{#if $eq status 'filled'}}
+                <div class="alert alert-success">
+                    <i class="fa fa-trophy fa-2x pull-left"></i> This job post has been filled.
                 </div>
-            {{else}}
-                {{#if $eq status 'filled'}}
-                    <div class="alert alert-success">
-                        <i class="fa fa-trophy fa-2x pull-left"></i> This job post has been filled.
-                    </div>
-                {{/if}}
             {{/if}}
         {{/if}}
     {{/if}}
 </template>
-<template name="jobFeatured">
-    {{#if $eq currentUser._id userId}}
-        {{#unless featured}}
-            {{#if featuredAllowed}}
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="well">
-                            <h3 class="top-flush">Upgrade to a Featured Job Post</h3>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul>
-                                        <li>Guaranteed to stay on home page</li>
-                                        <li>Highlighted job listing display</li>
-                                        <li>Priority placement in jobs listing</li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6 text-center">
-                                    <a id="buy-featured" class="btn btn-primary btn-lg" role="button" href="#">Buy 30 Days for $100</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {{/if}}
-        {{/unless}}
+<template name="jobActivate">
+    {{#if $eq status "inactive"}}
+        <div class="pull-right">
+            <a id="job-activate" class="btn btn-success">
+                <i class="fa fa-cc-stripe"></i> Pay With Stripe To Activate
+            </a>
+        </div>
     {{/if}}
 </template>

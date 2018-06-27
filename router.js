@@ -11,7 +11,7 @@ Router.configure({
     },
     progressSpinner: false,
     progressDelay: 250,
-    title: "We Work Meteor - Job board and developer listing just for Meteor"
+    title: "We Hire React-Native - Job board for React-Native"
 });
 
 
@@ -61,12 +61,12 @@ Router.map(function() {
 
     this.route('jobs', {
         path: '/jobs',
-        title: "We Work Meteor - All Jobs"
+        title: "We Hire React-Native - All Jobs"
     });
 
     this.route('myJobs', {
         path: '/myjobs',
-        title: "We Work Meteor - My Jobs",
+        title: "We Hire React-Native - My Jobs",
         data: function() {
             return {
                 jobs: Jobs.find({
@@ -87,7 +87,7 @@ Router.map(function() {
         path: '/jobs/:_id/:slug?',
         title: function() {
             if (this.data())
-                return "We Work Meteor - " + this.data().title;
+                return "We Hire React-Native - " + this.data().title;
         },
         data: function() {
             return Jobs.findOne({
@@ -112,12 +112,12 @@ Router.map(function() {
 
     this.route('jobNew', {
         path: '/job',
-        title: "We Work Meteor - Post a Job"
+        title: "We Hire React-Native - Post a Job"
     });
 
     this.route('jobEdit', {
         path: '/jobs/:_id/:slug/edit',
-        title: "We Work Meteor - Edit Job Post",
+        title: "We Hire React-Native - Edit Job Post",
         data: function() {
             return {
                 job: Jobs.findOne({
@@ -132,7 +132,7 @@ Router.map(function() {
 
     this.route('profiles', {
         path: '/profiles',
-        title: "We Work Meteor - All Developers",
+        title: "We Hire React-Native - All Developers",
         subscriptions: function() {
             return subs.subscribe('developerUsers');
         }
@@ -142,7 +142,7 @@ Router.map(function() {
         path: '/profiles/:_id/:slug?',
         title: function() {
             if (this.data())
-                return "We Work Meteor - " + this.data().displayName() + " - " + this.data().title;
+                return "We Hire React-Native - " + this.data().displayName() + " - " + this.data().title;
         },
         data: function() {
             return Profiles.findOne({
@@ -167,7 +167,7 @@ Router.map(function() {
 
     this.route('profileNew', {
         path: '/profile',
-        title: "We Work Meteor - Create Developer Profile",
+        title: "We Hire React-Native - Create Developer Profile",
         onBeforeAction: function() {
             if (Meteor.user().isDeveloper) {
                 Router.go('profile', Profiles.findOne({
@@ -181,7 +181,7 @@ Router.map(function() {
 
     this.route('profileEdit', {
         path: '/profiles/:_id/:slug/edit',
-        title: "We Work Meteor - Edit My Developer Profile",
+        title: "We Hire React-Native - Edit My Developer Profile",
         data: function() {
             return {
                 profile: Profiles.findOne({
