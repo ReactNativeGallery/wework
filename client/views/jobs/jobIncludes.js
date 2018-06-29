@@ -35,7 +35,7 @@ Template.jobActivate.events({
     btn.button('loading');
     StripeCheckout.open({
       key: Meteor.settings.public.Stripe.pubKey,
-      name: 'We Hire React-Native',
+      name: 'We hire React-Native',
       billingAddress: true,
       allowRememberMe: true,
       description: 'Job Post - 30 Days - 99$',

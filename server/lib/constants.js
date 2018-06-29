@@ -1,1 +1,1 @@
-FROM_EMAIL = "We Hire React-Native <xcapetir+rnjob@gmail.com>";
+FROM_EMAIL = "We hire React-Native <xcapetir+rnjob@gmail.com>";

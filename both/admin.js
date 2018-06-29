@@ -1,5 +1,5 @@
 AdminConfig = {
-  name: 'We Hire React-Native',
+  name: 'We hire React-Native',
   collections: {
     Jobs: {
       icon: 'briefcase',

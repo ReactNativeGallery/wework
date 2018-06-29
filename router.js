@@ -11,9 +11,8 @@ Router.configure({
     },
     progressSpinner: false,
     progressDelay: 250,
-    title: "We Hire React-Native - Job board for React-Native"
+    title: "We hire React-Native - Job board for React-Native"
 });
-
 
 Router.map(function() {
     this.route('home', {
@@ -61,12 +60,12 @@ Router.map(function() {
 
     this.route('jobs', {
         path: '/jobs',
-        title: "We Hire React-Native - All Jobs"
+        title: "We hire React-Native - All Jobs"
     });
 
     this.route('myJobs', {
         path: '/myjobs',
-        title: "We Hire React-Native - My Jobs",
+        title: "We hire React-Native - My Jobs",
         data: function() {
             return {
                 jobs: Jobs.find({
@@ -87,7 +86,7 @@ Router.map(function() {
         path: '/jobs/:_id/:slug?',
         title: function() {
             if (this.data())
-                return "We Hire React-Native - " + this.data().title;
+                return "We hire React-Native - " + this.data().title;
         },
         data: function() {
             return Jobs.findOne({
@@ -112,12 +111,12 @@ Router.map(function() {
 
     this.route('jobNew', {
         path: '/job',
-        title: "We Hire React-Native - Post a Job"
+        title: "We hire React-Native - Post a Job"
     });
 
     this.route('jobEdit', {
         path: '/jobs/:_id/:slug/edit',
-        title: "We Hire React-Native - Edit Job Post",
+        title: "We hire React-Native - Edit Job Post",
         data: function() {
             return {
                 job: Jobs.findOne({

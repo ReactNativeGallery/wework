@@ -1,4 +1,4 @@
-## We Hire React-Native
+## We hire React-Native
 
 # React-Native Job Board
 

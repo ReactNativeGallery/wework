@@ -92,7 +92,7 @@ Meteor.methods({
         source: tokenId,
         amount: 9900,
         currency: "usd",
-        description: "We Hire React-Native - Job Post - 30 Days"
+        description: "We hire React-Native - Job Post - 30 Days"
       });
 
       if (result && (result.status === "succeeded" || result.status === "paid")) { //'paid' status is not in stripe docs, but is occuring - see https://github.com/nate-strauser/wework/issues/108
