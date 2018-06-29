@@ -129,92 +129,17 @@ Router.map(function() {
             return subs.subscribe("job", this.params._id);
         }
     });
-
-    this.route('profiles', {
-        path: '/profiles',
-        title: "We Hire React-Native - All Developers",
-        subscriptions: function() {
-            return subs.subscribe('developerUsers');
-        }
-    });
-
-    this.route('profile', {
-        path: '/profiles/:_id/:slug?',
-        title: function() {
-            if (this.data())
-                return "We Hire React-Native - " + this.data().displayName() + " - " + this.data().title;
-        },
-        data: function() {
-            return Profiles.findOne({
-                _id: this.params._id
-            });
-        },
-        waitOn: function() {
-            return subs.subscribe('profile', this.params._id);
-        },
-        onBeforeAction: function() {
-            var expectedSlug = this.data().slug();
-            if (this.params.slug !== expectedSlug) {
-                this.redirect("profile", {
-                    _id: this.params._id,
-                    slug: expectedSlug
-                });
-            } else {
-                this.next();
-            }
-        }
-    });
-
-    this.route('profileNew', {
-        path: '/profile',
-        title: "We Hire React-Native - Create Developer Profile",
-        onBeforeAction: function() {
-            if (Meteor.user().isDeveloper) {
-                Router.go('profile', Profiles.findOne({
-                    userId: Meteor.userId()
-                }));
-            } else {
-                this.next();
-            }
-        }
-    });
-
-    this.route('profileEdit', {
-        path: '/profiles/:_id/:slug/edit',
-        title: "We Hire React-Native - Edit My Developer Profile",
-        data: function() {
-            return {
-                profile: Profiles.findOne({
-                    _id: this.params._id
-                })
-            };
-        },
-        waitOn: function() {
-            return subs.subscribe('profile', this.params._id);
-        }
-    });
-
-    //legacy url redirects
-    this.route('experts', function() {
-        this.redirect("profiles");
-    });
-    this.route('experts/:_id', function() {
-        this.redirect("profile", {
-            _id: this.params._id
-        });
-    });
 });
 
 Router.plugin('ensureSignedIn', {
-    only: ['profileEdit', 'profileNew', 'jobEdit', 'jobNew']
+    only: ['jobEdit', 'jobNew']
 });
 
 
 Router.onBeforeAction(function() {
-    loadUploadcare();
     this.next();
 }, {
-    only: ['profileEdit', 'profileNew', 'jobEdit', 'jobNew']
+    only: ['jobEdit', 'jobNew']
 });
 
 Router.plugin('dataNotFound', {

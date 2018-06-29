@@ -101,6 +101,7 @@ mongo-dev-server@1.1.0
 mongo-id@1.0.6
 mpowaga:autoform-summernote@0.4.4
 multiply:iron-router-progress@1.0.2
+mycartio:newrelic@1.0.5
 natestrauser:connection-banner@0.5.2
 natestrauser:font-awesome@4.6.3
 natestrauser:publish-performant-counts@0.1.2
