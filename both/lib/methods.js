@@ -90,8 +90,8 @@ Meteor.methods({
     if (Meteor.isServer) {
       var result = Stripe.charges.create({
         source: tokenId,
-        amount: 9900,
-        currency: "usd",
+        amount: 7700,
+        currency: "eur",
         description: "We hire React-Native - Job Post - 30 Days"
       });
 

@@ -38,9 +38,9 @@ Template.jobActivate.events({
       name: 'We hire React-Native',
       billingAddress: true,
       allowRememberMe: true,
-      description: 'Job Post - 30 Days - 99$',
-      currency: "usd",
-      amount: 9900,
+      description: 'Job Post - 30 Days - 77€',
+      currency: "eur",
+      amount: 7700,
       email: getUserEmail(Meteor.user()),
       closed: function() {
         btn.button('reset');

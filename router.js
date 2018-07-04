@@ -134,7 +134,6 @@ Router.plugin('ensureSignedIn', {
     only: ['jobEdit', 'jobNew']
 });
 
-
 Router.onBeforeAction(function() {
     this.next();
 }, {
