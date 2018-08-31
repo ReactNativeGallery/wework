@@ -40,6 +40,10 @@ Jobs.attachSchema(
       type: Boolean,
       label: "This is a remote position."
     },
+    codePromo: {
+      type: String,
+      label: "Code promo"
+    },
     userId: {
       type: String,
       label: "User Id",

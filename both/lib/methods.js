@@ -88,9 +88,10 @@ Meteor.methods({
 
 
     if (Meteor.isServer) {
+      const amount = job.codePromo === Meteor.settings.public.promo.early ? 5775 : 7700
       var result = Stripe.charges.create({
         source: tokenId,
-        amount: 7700,
+        amount,
         currency: "eur",
         description: "We hire React-Native - Job Post - 30 Days"
       });

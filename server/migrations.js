@@ -123,6 +123,20 @@ Migrations.add({
   down: function() {}
 });
 
+Migrations.add({
+  version: 7,
+  up() {
+    Jobs.find({codePromo: {$exists: false}}).forEach(function(job) {
+      Jobs.update(job._id, {$set: {codePromo: ''}});
+    })
+  },
+  down() {
+    Jobs.update({}, {$unset: {codePromo: true}}, {multi: true});
+  }
+
+
+});
+
 Meteor.startup(function() {
   Migrations.migrateTo('latest');
 });

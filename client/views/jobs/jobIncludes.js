@@ -33,14 +33,17 @@ Template.jobActivate.events({
     var job = template.data;
     var btn = $(event.currentTarget);
     btn.button('loading');
+    const isPromo = Meteor.settings.public.promo.early === job.codePromo;
+    const amount = isPromo ? 5775 : 7700
+    const description = isPromo ? 'Job Post - 30 Days - 57.75€ (promo)' : 'Job Post - 30 Days - 77€'
     StripeCheckout.open({
       key: Meteor.settings.public.Stripe.pubKey,
       name: 'We hire React-Native',
       billingAddress: true,
       allowRememberMe: true,
-      description: 'Job Post - 30 Days - 77€',
+      description,
       currency: "eur",
-      amount: 7700,
+      amount,
       email: getUserEmail(Meteor.user()),
       closed: function() {
         btn.button('reset');
