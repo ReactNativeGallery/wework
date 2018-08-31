@@ -42,7 +42,7 @@ Jobs.attachSchema(
     },
     codePromo: {
       type: String,
-      label: "Code promo"
+      label: "Promo code"
     },
     userId: {
       type: String,
