@@ -1,71 +1,79 @@
 <template name="jobNew">
-    <div class="row">
-        <div class="col-sm-10 col-sm-offset-1">
-                <h4 class="text-center">We like to make sure every listing is suitable for <strong>React-Native developpers</strong>.</h4>
-                <br>
-                <p class="text-center">
-                    <br/>Your <strong>job</strong> will be linked to <a target="_blank" href="https://reactnative.gallery/">reactnative.gallery</a>.
-                    <br/>Also on our <a target="_blank" href="https://www.linkedin.com/groups/13590886">Linkedin groups</a>.
-                    <br/>Posted to our <strong>Slack - channel #jobs</strong>.
-                    <br/>Sent to our <strong>mailing list</strong>.
-                    <br/>Will remain on this site for <strong>30 days</strong> and for <strong>€77</strong>.
-                    <br/>After 30 days the post will no longer appear to visitors.
-                </p>
-                <br>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4>Create Your React-Native Job Post</h4>
-                </div>
-                <div class="panel-body">
-                    {{#autoForm id="jobNew" collection="Jobs" type="insert" }}
-                        {{>jobFields}}
-                        <div class="text-right">
-                            <button type="submit" class="btn btn-success">
-                                <i class="fa fa-chevron-right"></i> Preview
-                            </button>
-                        </div>
-                    {{/autoForm}}
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      <h4 class="text-center">
+        We like to make sure every listing is suitable for
+        <strong>React-Native developpers</strong>.
+      </h4>
+      <br />
+      <p class="text-center">
+        <br />Your <strong>job</strong> will be linked to
+        <a target="_blank" href="https://reactnative.gallery/"
+          >reactnative.gallery</a
+        >. <br />Also on our
+        <a target="_blank" href="https://www.linkedin.com/groups/13590886"
+          >Linkedin groups</a
+        >. <br />Posted to our <strong>Slack - channel #jobs</strong>.
+        <br />Sent to our <strong>mailing list</strong>. <br />
+      </p>
+      <br />
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Create Your React-Native Job Post</h4>
         </div>
+        <div class="panel-body">
+          {{#autoForm id="jobNew" collection="Jobs" type="insert" }}
+          {{>jobFields}}
+          <div class="text-right">
+            <button type="submit" class="btn btn-success">
+              <i class="fa fa-chevron-right"></i> Preview
+            </button>
+          </div>
+          {{/autoForm}}
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 <template name="jobEdit">
-    <div class="row">
-        <div class="col-sm-10 col-sm-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4>Edit Job Post</h4>
-                </div>
-                <div class="panel-body">
-                    {{!-- {{#if $eq job.status 'pending'}} --}}
-                        {{#autoForm id="jobEdit" collection="Jobs" doc=job type="update" }}
-                            {{>jobFields}}
-                            <div>
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Update</button>
-                                <button id="cancel" class="btn btn-default"> Cancel</button>
-                            </div>
-                        {{/autoForm}}
-                    {{!-- {{else}}
-                        <div class="alert alert-info">
-                            <i class="fa fa-exclamation-triangle fa-2x pull-left"></i> Only pending jobs can be edited.
-                            <br>
-                            <a href="{{pathFor 'job' _id=job._id}}">Back to post</a>
-                        </div>
-                    {{/if}} --}}
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Edit Job Post</h4>
         </div>
+        <div class="panel-body">
+          {{!-- {{#if $eq job.status 'pending'}} --}}
+          {{#autoForm id="jobEdit" collection="Jobs" doc=job type="update" }}
+          {{>jobFields}}
+          <div>
+            <button type="submit" class="btn btn-primary">
+              <i class="fa fa-floppy-o"></i> Update
+            </button>
+            <button id="cancel" class="btn btn-default">Cancel</button>
+          </div>
+          {{/autoForm}}
+          {{!-- {{else}}
+          <div class="alert alert-info">
+            <i class="fa fa-exclamation-triangle fa-2x pull-left"></i> Only
+            pending jobs can be edited.
+            <br />
+            <a href="{{pathFor 'job' _id=job._id}}">Back to post</a>
+          </div>
+          {{/if}} --}}
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 <template name="jobFields">
-    {{> afQuickField name='title' placeholder="Title displayed for your listing"}}
-    {{> afQuickField name="jobtype" firstOption="(Select a Job Type)" options="allowed"}}
-    {{> afQuickField name='company' placeholder="Name of the hiring company"}}
-    {{> afQuickField name='location' placeholder="Where is this job located?"}}
-    {{> afQuickField name='remote'}}
-    {{> afQuickField name='description'}}
-    {{> afQuickField name='url' placeholder="External URL of job posting"}}
-    {{> afQuickField name='contact' placeholder="Email or Twitter"}}
-    {{> afQuickField name='codePromo'}}
+  {{> afQuickField name='title' placeholder="Title displayed for your listing"}}
+  {{> afQuickField name="jobtype" firstOption="(Select a Job Type)" options="allowed"}}
+  {{> afQuickField name='company' placeholder="Name of the hiring company"}}
+  {{> afQuickField name='location' placeholder="Where is this job located?"}}
+  {{> afQuickField name='remote'}}
+  {{> afQuickField name='description'}}
+  {{> afQuickField name='url' placeholder="External URL of job posting"}}
+  {{> afQuickField name='contact' placeholder="Email or Twitter"}}
+  {{> afQuickField name='codePromo'}}
 </template>
