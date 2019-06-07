@@ -44,7 +44,10 @@ Template.jobActivate.events({
     // const description = isPromo
     //   ? 'Job Post - 30 Days - 57.75€ (promo)'
     //   : 'Job Post - 30 Days - 77€'
-    Meteor.call('jobActivate', token.id, job._id, function(error, result) {
+    Meteor.call('jobActivate', undefined /*token.id*/, job._id, function(
+      error,
+      _result,
+    ) {
       if (error) {
         console.log('Insert Error:', error)
       }
