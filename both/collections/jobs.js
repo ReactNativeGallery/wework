@@ -30,6 +30,7 @@ Jobs.attachSchema(
       type: String,
       label: 'Contact Info',
       max: 128,
+      regEx: SimpleSchema.RegEx.Email,
     },
     jobtype: {
       type: String,

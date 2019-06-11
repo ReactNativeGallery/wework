@@ -1,76 +1,94 @@
 <template name="job">
-	<div id="job" class="row">
-		<div class="col-sm-12">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					{{>jobExpiredAlert}}
-					{{#if isInRole 'admin'}}
-					    {{>jobAdminEditLink}}
-					    {{>jobStatusToggle}}
-					    {{>jobSuggestedTweet}}
-					{{/if}}
-					{{>jobStatusAlert}}
-					<div class="row">
-						<div class="col-sm-12">
-							<h2>
-								{{title}}
-							</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-sm-3">
-							{{#if company}}
-								<i class="fa fa-building fa-fw"></i> {{company}}
-							{{/if}}
-						</div>
-						<div class="col-sm-3">
-							{{#if location}}
-								<i class="fa fa-map-marker"></i> {{location}}
-							{{/if}}
-						</div>
-						<div class="col-sm-6 job-url">
-							{{#if url}}
-								<i class="fa fa-external-link fa-m"></i>&nbsp;&nbsp;<a href="{{url}}" target="_blank" rel="noopener">{{cutString url 50}}</a>
-							{{/if}}
-						</div>
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-sm-3">
-							{{>jobLabels}}
-							{{#if hasLabel}}
-								<hr>
-							{{/if}}
-							{{#if contact}}
-								<i class="fa fa-envelope fa-fw"></i> {{contact}}
-								<hr>
-							{{/if}}
-							<i class="fa fa-calendar fa-fw"></i> Posted on {{formatDate createdAt}}
-							{{#if featured}}
-							<hr>
-							<i class="fa fa-trophy fa-fw"></i> Featured Until {{formatDate featuredThrough}}
-							{{/if}}
-						</div>
-						<div class="col-sm-9">
-							{{#if htmlDescription}}
-								{{{htmlDescription}}}
-							{{/if}}
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12">
-							{{#if $eq userId $.Meteor.userId}}
-								{{!-- {{#if $eq status "pending"}} --}}
-									<div class="pull-right">
-										&nbsp;
-										<a href="{{pathFor 'jobEdit'}}" class="btn btn-primary"><i class="fa fa-pencil"></i> Edit</a>
-									</div>
-								{{>jobActivate}}
-							{{/if}}
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div id="job" class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          {{>jobExpiredAlert}}
+          {{#if isInRole 'admin'}}
+          {{>jobAdminEditLink}}
+          {{>jobStatusToggle}}
+          {{/if}}
+          {{>jobStatusAlert}}
+          <div class="row">
+            <div class="col-sm-12">
+              <h2>
+                {{ title }}
+              </h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              {{#if company}}
+              <i class="fa fa-building fa-fw"></i> {{ company }}
+              {{/if}}
+            </div>
+            <div class="col-sm-3">
+              {{#if location}}
+              <i class="fa fa-map-marker"></i> {{ location }}
+              {{/if}}
+            </div>
+            <div class="col-sm-6 job-url">
+              {{#if url}}
+              <i class="fa fa-external-link fa-m"></i>&nbsp;&nbsp;<a
+                href="{{ url }}"
+                target="_blank"
+                rel="noopener"
+                >{{cutString url 50}}</a
+              >
+              {{/if}}
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-3">
+              <i class="fa fa-calendar fa-fw"></i> Posted on
+              {{formatDate createdAt}}
+              <hr />
+              {{>jobLabels}}
+              {{#if hasLabel}}
+              <hr />
+              {{/if}}
+              {{#if contact}}
+              <div>
+                <a
+                  id="job-contact-recruiters"
+                  class="btn btn-success"
+                  role="button"
+                >
+                  <i class="fa fa-chevron-right"></i> Contact</a
+                >
+                <br />
+                <hr />
+              </div>
+              {{/if}}
+              {{#if featured}}
+              <hr />
+              <i class="fa fa-trophy fa-fw"></i> Featured Until
+              {{formatDate featuredThrough}}
+              {{/if}}
+            </div>
+            <div class="col-sm-9">
+              {{#if htmlDescription}}
+              {{{htmlDescription}}}
+              {{/if}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              {{#if $eq userId $.Meteor.userId}}
+              {{!-- {{#if $eq status "pending"}} --}}
+              <div class="pull-right">
+                &nbsp;
+                <a href="{{pathFor 'jobEdit'}}" class="btn btn-primary"
+                  ><i class="fa fa-pencil"></i> Edit</a
+                >
+              </div>
+              {{>jobActivate}}
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
