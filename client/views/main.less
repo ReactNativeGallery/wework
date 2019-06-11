@@ -1,4 +1,4 @@
-@import "../lib/custom.bootstrap.import.less";
+@import '../lib/custom.bootstrap.import.less';
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -6,15 +6,23 @@ body {
 }
 
 .jumbotron {
-  h1,h2,h3,h4,h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     font-family: @font-family-sans-serif;
     color: #fff;
   }
 }
 
-h1,h2,h3,h4,h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: @font-family-sans-serif;
-  &.top-flush{
+  &.top-flush {
     margin-top: 0px;
   }
 }
@@ -27,84 +35,91 @@ h1,h2,h3,h4,h5 {
   background: linear-gradient(to right, rgb(141, 194, 111), rgb(118, 184, 82));
   border-color: rgb(141, 194, 111);
   &:hover {
-      border-color: rgb(118, 184, 82);
+    border-color: rgb(118, 184, 82);
   }
   &:active {
-      background:rgb(141, 194, 111);
-      border-color: rgb(141, 194, 111);
+    background: rgb(141, 194, 111);
+    border-color: rgb(141, 194, 111);
   }
   &:focus {
-      background:rgb(141, 194, 111);
-      border-color: rgb(141, 194, 111);
+    background: rgb(141, 194, 111);
+    border-color: rgb(141, 194, 111);
   }
 }
 
 .avatar {
-    border-radius: 15px;
+  border-radius: 15px;
 }
 
 #content-wrapper {
-    min-height: 800px;
+  min-height: 800px;
 
-    .job-url {
-        word-break: break-all;
+  .job-url {
+    word-break: break-all;
 
-        @media (min-width: @screen-sm-min) {
-            text-align: right;
-        }
+    @media (min-width: @screen-sm-min) {
+      text-align: right;
     }
+  }
 }
 
 #iron-router-progress {
-    background-color : @brand-primary;
-    box-shadow       : 0 0 5px @brand-primary;
+  background-color: @brand-primary;
+  box-shadow: 0 0 5px @brand-primary;
 }
 
 .nav > li > p {
-    margin: 0;
-    padding: 10px 15px;
+  margin: 0;
+  padding: 10px 15px;
 }
 
 #content-wrapper > div.jumbotron a.col-sm-4 {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
-@media screen and (min-width:768px) {
-    .nav > li > p {
-        padding: 15px;
-    }
+@media screen and (min-width: 768px) {
+  .nav > li > p {
+    padding: 15px;
+  }
 
-    #content-wrapper > div.jumbotron a.col-sm-4 {
-        margin-top: 0;
-    }
+  #content-wrapper > div.jumbotron a.col-sm-4 {
+    margin-top: 0;
+  }
 }
 
-#callToAction{
-    margin-top: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    a, a:visited {
-       font-size: 125%;
-       color: #fff;
-    }
+#callToAction {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a,
+  a:visited {
+    font-size: 125%;
+    color: #fff;
+  }
 }
 
-#connection-lost-banner{
-    text-align: center;
+#connection-lost-banner {
+  text-align: center;
 }
 
-nav.navbar, .btn, li a, .input-group-addon, .jumbotron, .panel, .label{
+nav.navbar,
+.btn,
+li a,
+.input-group-addon,
+.jumbotron,
+.panel,
+.label {
   border-radius: 0px !important;
   font-family: @font-family-sans-serif;
 }
 
-.form-control{
+.form-control {
   -webkit-border-radius: 0;
-     -moz-border-radius: 0;
-          border-radius: 0;
-   &:focus {
+  -moz-border-radius: 0;
+  border-radius: 0;
+  &:focus {
     border: 1px solid #ccc;
     box-shadow: none;
     -webkit-box-shadow: none;
@@ -118,62 +133,64 @@ nav.navbar, .btn, li a, .input-group-addon, .jumbotron, .panel, .label{
   outline: none !important;
 }
 
-.label{
-    padding-top:0.5rem;
+.label {
+  padding-top: 0.5rem;
 }
 
-footer, .jumbotron {
-    background-color: #27272b;
-    color:white;
+footer,
+.jumbotron {
+  background-color: #27272b;
+  color: white;
 }
 
-#content-wrapper .jumbotron{
-    margin-top:-20px;
-    #buttons{
-         @media only screen and (min-width : @screen-md-max) { padding-top:50px; }
+#content-wrapper .jumbotron {
+  margin-top: -20px;
+  #buttons {
+    @media only screen and (min-width: @screen-md-max) {
+      padding-top: 50px;
     }
-    a:visited {
-        color: @brand-primary;
-    }
-    a.btn, a.btn:visited {
-        color: #fff;
-    }
+  }
+  a:visited {
+    color: @brand-primary;
+  }
+  a.btn,
+  a.btn:visited {
+    color: #fff;
+  }
 }
 
 nav.navbar {
-    .open .dropdown-toggle{
-        background:none;
-        color:@brand-primary;
+  .open .dropdown-toggle {
+    background: none;
+    color: @brand-primary;
+  }
+  .navbar-brand {
+    margin-right: 15px;
+    &:hover {
+      background: none;
     }
-    .navbar-brand{
-        margin-right:15px;
-        &:hover{
-            background:none;
-        }
+  }
+  .nav.navbar-nav li {
+    p.navbar-text {
+      font-size: 12px;
+      font-weight: normal;
+      padding-top: 19.5px;
+      line-height: 21px;
     }
-    .nav.navbar-nav li{
-
-        p.navbar-text{
-           font-size: 12px;
-            font-weight: normal;
-            padding-top:19.5px;
-            line-height: 21px;
-        }
-        &.active a{
-             background:none;
-             color:@brand-primary;
-        }
-
-            a {
-            font-size: 12px;
-            font-weight: normal;
-            &:hover{
-                background:none;
-                color:@brand-primary;
-            }
-
-        }
+    &.active a {
+      background: none;
+      color: @brand-primary;
     }
+
+    a {
+      font-size: 12px;
+      font-weight: normal;
+      &:hover {
+        background: none;
+        color: @brand-primary;
+      }
+    }
+  }
 }
 
 footer {
@@ -182,21 +199,50 @@ footer {
   padding: 5px;
 
   a:visited {
-      color: @brand-primary;
+    color: @brand-primary;
   }
 
-  #disclaimer{
-      font-size: 50%;
-      padding-top: 15px;
+  #disclaimer {
+    font-size: 50%;
+    padding-top: 15px;
   }
 }
 
-.note-editor{
-    .btn-toolbar{
-        margin-left: 0px;
-    }
+.note-editor {
+  .btn-toolbar {
+    margin-left: 0px;
+  }
 
-    .note-editing-area .note-editable {
-        min-height: 300px;
-    }
+  .note-editing-area .note-editable {
+    min-height: 300px;
+  }
+}
+
+.at-signup-link {
+  margin-top: 70px;
+  text-align: center;
+}
+
+#at-signUp {
+  &::before {
+    content: '> ';
+  }
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  padding: 15px;
+  margin-left: 15px;
+  background: linear-gradient(to right, rgb(141, 194, 111), rgb(118, 184, 82));
+  border-color: rgb(141, 194, 111);
+  &:hover {
+    border-color: rgb(118, 184, 82);
+  }
+  &:active {
+    background: rgb(141, 194, 111);
+    border-color: rgb(141, 194, 111);
+  }
+  &:focus {
+    background: rgb(141, 194, 111);
+    border-color: rgb(141, 194, 111);
+  }
 }
