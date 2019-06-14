@@ -28,7 +28,6 @@ callback-hook@1.0.10
 check@1.2.5
 coffeescript@1.11.1_4
 copleykj:stripe-sync@2.0.5
-datariot:ganalytics@0.3.0
 dburles:collection-helpers@1.1.0
 ddp@1.4.0
 ddp-client@2.2.0
