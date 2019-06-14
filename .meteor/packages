@@ -72,3 +72,5 @@ google-config-ui
 meteor-developer-config-ui
 twitter-config-ui
 dynamic-import
+kadira:dochead
+ostrio:iron-router-meta

@@ -45,6 +45,7 @@ ecmascript-runtime-client@0.5.0
 ecmascript-runtime-server@0.5.0
 ejson@1.1.0
 email@1.2.3
+es5-shim@4.6.15
 facebook-config-ui@1.0.1
 force-ssl@1.1.0
 force-ssl-common@1.1.0
@@ -70,6 +71,7 @@ jparker:crypto-core@0.1.0
 jparker:crypto-md5@0.1.1
 jparker:gravatar@0.5.1
 jquery@1.11.10
+kadira:dochead@1.5.0
 lampe:rssfeed@0.1.1
 launch-screen@1.1.1
 less@2.7.11
@@ -113,6 +115,7 @@ observe-sequence@1.0.16
 ongoworks:speakingurl@9.0.0
 ordered-dict@1.0.9
 ostrio:iron-router-helper-class@1.0.1
+ostrio:iron-router-meta@1.1.0
 ostrio:iron-router-title@1.0.3
 peppelg:bootstrap-3-modal@1.0.4
 percolate:migrations@0.9.8
