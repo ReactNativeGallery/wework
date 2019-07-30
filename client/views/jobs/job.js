@@ -11,7 +11,10 @@ Template.job.events({
 
 Template.job.onRendered(function(_, __) {
   DocHead.setTitle(this.data.title)
-  DocHead.addLink({ rel: 'canonical', href: Router.current().originalUrl })
+  DocHead.addLink({
+    rel: 'canonical',
+    href: 'https://jobs.reactnative.gallery' + Router.current().originalUrl,
+  })
 })
 
 Template.job.helpers({
